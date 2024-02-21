@@ -5,8 +5,9 @@ main{
 }
 .card1
 {
-    margin-top:90px;
-    padding: 20px;
+    margin-top:5px;
+    margin-left: 10px;
+    margin-right:10px;
 }
 .tablecolor th {
     background-color:#470A3C;

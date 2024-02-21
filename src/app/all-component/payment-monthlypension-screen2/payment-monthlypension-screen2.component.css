@@ -7,13 +7,16 @@ main{
 
 .card1
 {
-    margin-top:30px;
-    padding: 20px;
+  margin-top:25px;
+  margin-right:10px;
+  margin-left:10px;
 }
-.card2{
-margin-top: 15px;
-padding: 20px;
-}
+/* .card2{
+
+margin-top: 5px;
+margin-right:10px;
+margin-left:10px;
+} */
 
 .tablecolor th {
     background-color:#470A3C;

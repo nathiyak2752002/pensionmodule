@@ -1,5 +1,5 @@
 
-<div class="container card card1">
+<div class="card1">
     <div class="row">
         <div class="col-8"><h2>ARREAR</h2></div>
         <div class="col-2"><button (click)="downloadPDF()" class="exportpdf">Export to PDF</button></div>
@@ -32,11 +32,11 @@
     
       <form [formGroup]="settlement">
         <div class="row">
-            <div class="col-3">
+            <div class="col-2">
                 <mat-label>Vr.No</mat-label>
                 <input id="vrno" class="input form-control"  type="text" formControlName="vrno" mat-input>
             </div>   
-            <div class="col-3">
+            <div class="col-2">
                 <mat-label>Date</mat-label>
                 <input id="date" class="input form-control"  type="date" formControlName="date" mat-input>
            </div>    
@@ -44,7 +44,7 @@
     <!-- </div> -->
    
       
-    <div #content class="card  card2 tablecolor">
+    <div #content class=" card2 tablecolor">
         <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="position">
                 <th mat-header-cell *matHeaderCellDef style="border-top-left-radius:20px;border-bottom-left-radius:20px"><span>S.NO</span></th>

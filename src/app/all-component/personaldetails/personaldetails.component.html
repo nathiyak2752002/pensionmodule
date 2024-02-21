@@ -1,9 +1,22 @@
-<div class="container card card1">
-  <div class="row">
-    <div class="col-8">
-      <h2>Pension</h2>
+<div class=" card1">
+  <div class="row filter-row ">
+    <div class="col-6">
+      <h2>PENSION</h2>
     </div>
-    <div class="col-2"><button (click)="downloadPDF()" class="exportpdf">Export to PDF</button></div>
+    <div class="col-2 search-container">
+      <div class="search-icon">
+        <input matInput #input type="text" id="search-input" class="search-input" placeholder="Search Emp Id/Name">
+        <mat-icon>search</mat-icon>
+      </div>
+    </div>
+    <div class="col-2"><button (click)="downloadPDF()" style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;" class="exportpdf"> <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24"
+      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+      <path d="M7 11l5 5l5 -5" />
+      <path d="M12 4l0 12" />
+    </svg></span>Export to PDF</button></div>
     <div class="col-2">
       <button class="exportexcel" (click)="exportToExcel()"
         style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;">
@@ -18,19 +31,15 @@
         Export to Excel
       </button>
     </div>
-  </div>
-  <div class="card filter-row mb-4">
+ 
+  <!-- <div class="card mb-4">
     <div class="row">
-      <div class="col-2 search-container">
-        <div class="search-icon">
-          <input matInput #input type="text" id="search-input" class="search-input" placeholder="Search Emp Id/Name">
-          <mat-icon>search</mat-icon>
-        </div>
-      </div>
+      
+      </div> -->
       <!-- <div class="col-2">
         <input class="input form-control" type="text" name="Search" matInput formControlName="filter" >
       </div> -->
-    </div>
+    <!-- </div> -->
 
 
   </div>
