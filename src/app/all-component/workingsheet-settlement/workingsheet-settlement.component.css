@@ -35,6 +35,12 @@ color: #470A3C;
     padding: 20px;
     margin-top: 70px;
 }
+.addButton {
+    margin-top: 35px;
+}
+.deleteButton{
+    margin-top: 35px;   
+}
 .fetch{
     border-radius: 1rem;
     background-color: #470A3C;

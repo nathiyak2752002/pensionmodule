@@ -63,10 +63,15 @@ main{
   border-radius: 1rem;
 }
 .newemployee{
-  padding: 0.5rem 1rem;
-  background-color: #fff;
+  padding: 0.5rem 0.5rem;
+  /* background-color: #fff; */
   border-radius: 1rem;
+  background-color: #470A3C;
+  color: #fff;
+  font-size:19px
+  
 }
+
 .col-md-9 .pensionralign {
     font-size: 25px;
     font-weight: 500px;
@@ -87,7 +92,9 @@ main{
   margin-left: 80%;
   
 }
-
+.usericon{
+  margin-top: 10px;
+}
   
   
   .search-icon input {

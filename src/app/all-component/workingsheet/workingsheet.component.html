@@ -8,10 +8,10 @@
             <mat-icon>search</mat-icon>
           </div>
         </div>
-        <div class="col-2"><button routerLink="/pension/workingsheet-settlement" class="newemployee"  style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+        <div class="col-2"><button routerLink="/pension/workingsheet-settlement" class="newemployee"  style=" cursor: pointer; border-radius: 10px;"><span class="usericon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
           <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
           <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
-        </svg></span>  NEW EMPLOYEE</button></div>
+        </svg></span> NEW PENSIONER</button></div>
     
         <div class="col-2"><button (click)="downloadPDF()" class="exportpdf"  style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;">  <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -52,7 +52,7 @@
             </ng-container>
     
             <ng-container matColumnDef="employeeID">
-              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span></span>Employee ID</th>
+              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span></span>Emp ID</th>
               <td mat-cell *matCellDef="let element"> {{element.employeeID}} </td>
             </ng-container>
 
@@ -69,7 +69,7 @@
           
            
             <ng-container matColumnDef="officeCode">
-              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span>OFFICE CODE </span></th>
+              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span>Office Code </span></th>
               <td mat-cell *matCellDef="let element"> {{element.officeCode}}</td>
             </ng-container>
            
@@ -98,6 +98,7 @@
     <td mat-cell *matCellDef="let element">
         <mat-icon routerLink="/pension/workingsheet-settlement">update</mat-icon>
         <mat-icon style="margin-left: 5px;">visibility</mat-icon>
+        <mat-icon style="margin-left: 5px;">delete</mat-icon>
     </td>
         </ng-container>
             <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr>

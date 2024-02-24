@@ -13,9 +13,7 @@ export class WorkingsheetSettlementComponent {
   settlement!:FormGroup;
   formBuilder: any;
 
-constructor(private fb: FormBuilder) { 
-
-}
+  constructor(private fb: FormBuilder) { }
 
 ngOnInit(): void {
   this.settlement = this.fb.group({
@@ -28,11 +26,11 @@ ngOnInit(): void {
     dor:['',Validators.required],
     age:['',Validators.required],
     ppoNo:['',Validators.required],
-    arrearStart:['',Validators.required],
-    arrearTo:['',Validators.required],
-    basicPension:['',Validators.required],
-    commutedPension:['',Validators.required],    
-    pensionPayable:['',Validators.required],    
+    // arrearStart:['',Validators.required],
+    // arrearTo:['',Validators.required],
+    // basicPension:['',Validators.required],
+    // commutedPension:['',Validators.required],    
+    // pensionPayable:['',Validators.required],    
     totalPensionPayable:['',Validators.required],    
     additionalPension:['',Validators.required],    
     da:['',Validators.required],    
@@ -46,7 +44,8 @@ ngOnInit(): void {
     recoveryThree:['',Validators.required],   
     recoveryFour:['',Validators.required],   
     totalRecoveries:['',Validators.required],   
-    netPayable:['',Validators.required],  
+    netPayable:['',Validators.required], 
+    rows: this.fb.array([this.createRow()]) 
     
 
 });
@@ -54,14 +53,33 @@ ngOnInit(): void {
 
 
 
-
-
-
-
-
-
-
 }
+
+get rows(): FormArray {
+  return this.settlement.get('rows') as FormArray;
+}
+
+createRow(): FormGroup {
+  return this.fb.group({
+    arrearStart: ['', Validators.required],
+    arrearTo: ['', Validators.required],
+    basicPension: ['', Validators.required],
+    commutedPension: ['', Validators.required],
+    pensionPayable: ['', Validators.required],
+  });
+}
+
+
+addPaymentRow(): void {
+  this.rows.push(this.createRow());
+}
+
+removePaymentRow(index: number): void {
+  if (this.rows.length > 1) {
+    this.rows.removeAt(index);
+  }
+}
+
 
 
 
