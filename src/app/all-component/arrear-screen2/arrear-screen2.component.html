@@ -32,14 +32,23 @@
     
       <form [formGroup]="settlement">
         <div class="row">
-            <div class="col-2">
+            <!-- <div class="col-2">
                 <mat-label>Vr.No</mat-label>
                 <input id="vrno" class="input form-control"  type="text" formControlName="vrno" mat-input>
             </div>   
             <div class="col-2">
                 <mat-label>Date</mat-label>
                 <input id="date" class="input form-control"  type="date" formControlName="date" mat-input>
-           </div>    
+           </div>     -->
+           <div class="col-2">
+            <mat-label>Date</mat-label>
+            <input id="date" class="input form-control"  type="date" formControlName="date" (change)="calculateAge()" mat-input>
+          </div>
+          <div class="col-2">
+            <mat-label>Age</mat-label>
+            <input id="age" class="input form-control"  type="text" formControlName="age" mat-input>
+          </div>
+          
         </div></form>
     <!-- </div> -->
    

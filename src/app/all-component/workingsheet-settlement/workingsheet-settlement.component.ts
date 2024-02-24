@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -10,125 +10,59 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './workingsheet-settlement.component.css'
 })
 export class WorkingsheetSettlementComponent {
-pensionerDetails!:FormGroup;
-pensionDetailsPart1!:FormGroup;
-pensionDetailsPart2!:FormGroup;
-pensionDetailsPart3!:FormGroup;
-deathForm!:FormGroup; 
-pensionDetailsPart4!:FormGroup;
-selectedType!:string;
-constructor(private fb: FormBuilder) { }
+  settlement!:FormGroup;
+  formBuilder: any;
 
-ngOnInit(): void {
-  this.pensionerDetails = this.fb.group({
-    pfno: ['', Validators.required],
-    empName:['',Validators.required],
-    designation:['',Validators.required],
-    lastPlaceWorking:['',Validators.required],
-    dob:['',Validators.required],
-    doa:['',Validators.required],
-    retirementType:['',Validators.required],
-    retirementDate:['',Validators.required],
-    spouseName:['',Validators.required],
-    spouseDob:['',Validators.required],
-    totalMc:['',Validators.required],
-    serviceBreak:['',Validators.required],
-    boyServices:['',Validators.required]
-});
-this.pensionDetailsPart1 = this.fb.group({
-  optingCommutation:['',Validators.required],
-  commutationPortion:['',Validators.required],
-  commutationDate:['',Validators.required],
-  qualifyingService:['',Validators.required],
-  nonQualifyingService:['',Validators.required],
-  netQualifyingService:['',Validators.required],
-  halfYearPension:['',Validators.required],
-  halfDcrg:['',Validators.required],
-  basicPay:['',Validators.required],
-  gradePay:['',Validators.required],
-  basicPension:['',Validators.required],
-  familyPensionFifty:['',Validators.required],
-  familyPensionThirty:['',Validators.required],
-  dcrg:['',Validators.required],
-  commutedValue:['',Validators.required],
-  commutation:['',Validators.required],
-  residualPension:['',Validators.required],
-  ppoNo:['',Validators.required],
-});
-
-this.pensionDetailsPart2 = this.fb.group({
-  optingCommutation:['',Validators.required],
-  commutationPortion:['',Validators.required],
-  commutationDate:['',Validators.required],
-  qualifyingService:['',Validators.required],
-  nonQualifyingService:['',Validators.required],
-  netQualifyingService:['',Validators.required],
-  halfYearPension:['',Validators.required],
-  halfDcrg:['',Validators.required],
-  basicPay:['',Validators.required],
-  gradePay:['',Validators.required],
-  basicPension:['',Validators.required],
-  familyPensionFifty:['',Validators.required],
-  familyPensionThirty:['',Validators.required],
-  dcrg:['',Validators.required],
-  commutedValue:['',Validators.required],
-  commutation:['',Validators.required],
-  residualPension:['',Validators.required],
-  ppoNo:['',Validators.required],
-});
-
-
-this.pensionDetailsPart3 = this.fb.group({
-  optingCommutation:['',Validators.required],
-  commutationPortion:['',Validators.required],
-  commutationDate:['',Validators.required],
-  qualifyingService:['',Validators.required],
-  nonQualifyingService:['',Validators.required],
-  netQualifyingService:['',Validators.required],
-  halfYearPension:['',Validators.required],
-  halfDcrg:['',Validators.required],
-  basicPay:['',Validators.required],
-  gradePay:['',Validators.required],
-  basicPension:['',Validators.required],
-  familyPensionFifty:['',Validators.required],
-  familyPensionThirty:['',Validators.required],
-  dcrg:['',Validators.required],
-  commutedValue:['',Validators.required],
-  commutation:['',Validators.required],
-  residualPension:['',Validators.required],
-  ppoNo:['',Validators.required],
-});
-
-this.deathForm = this.fb.group({
-  
-  
-  grossQualifying:['',Validators.required],
-  nonqualifyingService:['',Validators.required],
-  netQualifyingService:['',Validators.required],
-  halfYear:['',Validators.required],
-  basicPay:['',Validators.required],
-  gradePay:['',Validators.required],
-  familyPensionFifty:['',Validators.required],
-  familyPensionThirty:['',Validators.required],
-  dcrg:['',Validators.required],
-  reducedDate:['',Validators.required],
-  ppoNo:['',Validators.required]
-})
-
-
-this.pensionDetailsPart4=this.fb.group({
-  grossQualifying:['',Validators.required],
-  nonQualifyingService:['',Validators.required],
-  netQualifyingService:['',Validators.required],
-  halfYear:['',Validators.required],
-  basicPay:['',Validators.required],
-  gradePay:['',Validators.required],
-  basicPension:['',Validators.required],
-  familyPensionFifty:['',Validators.required],
-  familyPensionThirty:['',Validators.required],
-  ppoNo:['',Validators.required]
-});
+constructor(private fb: FormBuilder) { 
 
 }
+
+ngOnInit(): void {
+  this.settlement = this.fb.group({
+    empId: ['', Validators.required],
+    empName:['',Validators.required],
+    designation:['',Validators.required],
+    officeCode:['',Validators.required],
+    dob:['',Validators.required],
+    doa:['',Validators.required],
+    dor:['',Validators.required],
+    age:['',Validators.required],
+    ppoNo:['',Validators.required],
+    arrearStart:['',Validators.required],
+    arrearTo:['',Validators.required],
+    basicPension:['',Validators.required],
+    commutedPension:['',Validators.required],    
+    pensionPayable:['',Validators.required],    
+    totalPensionPayable:['',Validators.required],    
+    additionalPension:['',Validators.required],    
+    da:['',Validators.required],    
+    ma:['',Validators.required],    
+    grossPension:['',Validators.required],    
+    dcrg:['',Validators.required],   
+    commutation:['',Validators.required],   
+    totalAmount:['',Validators.required],   
+    recoveryOne:['',Validators.required],   
+    recoveryTwo:['',Validators.required],   
+    recoveryThree:['',Validators.required],   
+    recoveryFour:['',Validators.required],   
+    totalRecoveries:['',Validators.required],   
+    netPayable:['',Validators.required],  
+    
+
+});
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 }

@@ -62,6 +62,11 @@ main{
   background-color: #fff;
   border-radius: 1rem;
 }
+.newemployee{
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+}
 .col-md-9 .pensionralign {
     font-size: 25px;
     font-weight: 500px;

@@ -1,13 +1,18 @@
 
 <div class="card1">
     <div class="row filter-row">
-        <div class="col-6"><h2>SETTLEMENT</h2></div>
+        <div class="col-4"><h2>SETTLEMENT</h2></div>
         <div class="col-2 search-container">
           <div class="search-icon">
             <input matInput #input type="text" id="search-input" class="search-input" placeholder="Search Emp Id/Name">
             <mat-icon>search</mat-icon>
           </div>
         </div>
+        <div class="col-2"><button routerLink="/pension/workingsheet-settlement" class="newemployee"  style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+          <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+          <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+        </svg></span>  NEW EMPLOYEE</button></div>
+    
         <div class="col-2"><button (click)="downloadPDF()" class="exportpdf"  style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;">  <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
@@ -46,9 +51,9 @@
               <td mat-cell *matCellDef="let element"> {{element.position}} </td>
             </ng-container>
     
-            <ng-container matColumnDef="pfno">
-              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span>PF No</span></th>
-              <td mat-cell *matCellDef="let element"> {{element.pfno}} </td>
+            <ng-container matColumnDef="employeeID">
+              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span></span>Employee ID</th>
+              <td mat-cell *matCellDef="let element"> {{element.employeeID}} </td>
             </ng-container>
 
             <ng-container matColumnDef="name">
@@ -57,24 +62,35 @@
               </ng-container>
           
           
-            <ng-container matColumnDef="ppo">
-              <th   class="headerdesign" mat-header-cell *matHeaderCellDef><span>PPO</span></th>
-              <td mat-cell *matCellDef="let element"> {{element.ppo}} </td>
+            <ng-container matColumnDef="designation">
+              <th   class="headerdesign" mat-header-cell *matHeaderCellDef><span>Designation</span></th>
+              <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
             </ng-container>
           
            
-            <ng-container matColumnDef="retirementType">
-              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span>Type of Retirement</span></th>
-              <td mat-cell *matCellDef="let element"> {{element.retirementType}}</td>
+            <ng-container matColumnDef="officeCode">
+              <th  class="headerdesign" mat-header-cell *matHeaderCellDef> <span>OFFICE CODE </span></th>
+              <td mat-cell *matCellDef="let element"> {{element.officeCode}}</td>
             </ng-container>
            
 
-            <ng-container matColumnDef="retirementDate">
-                <th  class="headerdesign" mat-header-cell *matHeaderCellDef><span>Date of Retirement</span> </th>
-                <td mat-cell *matCellDef="let element"> {{element.retirementDate}} </td>
+            <ng-container matColumnDef="ppoNo">
+                <th  class="headerdesign" mat-header-cell *matHeaderCellDef><span>PPO NO</span> </th>
+                <td mat-cell *matCellDef="let element"> {{element.ppoNo}} </td>
               </ng-container> 
               
-
+              <ng-container matColumnDef="totalAmount">
+                <th  class="headerdesign" mat-header-cell *matHeaderCellDef><span>Total Amount </span></th>
+                <td mat-cell *matCellDef="let element"> {{element.totalAmount}} </td>
+              </ng-container> 
+              <ng-container matColumnDef="totalRecoveries">
+                <th  class="headerdesign" mat-header-cell *matHeaderCellDef><span>Total Recoveries</span> </th>
+                <td mat-cell *matCellDef="let element"> {{element.totalRecoveries}} </td>
+              </ng-container>
+              <ng-container matColumnDef="netPayable">
+                <th  class="headerdesign" mat-header-cell *matHeaderCellDef><span>Net Payable</span> </th>
+                <td mat-cell *matCellDef="let element"> {{element.netPayable}} </td>
+              </ng-container>
 <ng-container matColumnDef="action">
     <th class="headerdesign" mat-header-cell *matHeaderCellDef style="border-bottom-right-radius: 20px; border-top-right-radius:20px">
         <span> Action </span>

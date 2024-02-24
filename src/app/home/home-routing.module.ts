@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from '../pages/navbar/navbar.component';
-import { PersonaldetailsComponent } from '../all-component/personaldetails/personaldetails.component';
 import { OngoingPersonnelDetailsComponent } from '../all-component/ongoing-personnel-details/ongoing-personnel-details.component';
 import { WorkingsheetComponent } from '../all-component/workingsheet/workingsheet.component';
 import { WorkingsheetSettlementComponent } from '../all-component/workingsheet-settlement/workingsheet-settlement.component';
@@ -19,7 +18,6 @@ const routes: Routes = [
     path: '', component: NavbarComponent,
     children: [{ path: '', redirectTo: 'pension-list', pathMatch: 'full' },
 
-    { path: 'personaldetails', component: PersonaldetailsComponent },
     { path: 'ongoing-personnel-details/:id', component: OngoingPersonnelDetailsComponent },
     { path: 'workingsheet', component: WorkingsheetComponent },
     { path: 'workingsheet-settlement', component: WorkingsheetSettlementComponent },

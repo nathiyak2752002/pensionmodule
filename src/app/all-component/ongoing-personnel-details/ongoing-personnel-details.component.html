@@ -116,10 +116,20 @@
         <mat-label>PF NO</mat-label>
         <input id="pfno" class="input form-control" type="number" formControlName="pfno" mat-input readonly>
       </div>
-      <div class="col">
+      <!-- <div class="col">
         <mat-label>Pension status</mat-label>
         <input id="pensionStatus" class="input form-control" type="text" formControlName="pensionStatus" mat-input>
-      </div>
+      </div> -->
+      <div class="col">
+        <mat-label for="pensionStatus">Pension status</mat-label>
+        <select id="pensionStatus" class="input form-control" formControlName="pensionStatus" matInput>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+    
       <div class="col">
         <mat-label>Portion of Commutation</mat-label>
         <input id="commutationPortion" class="input form-control" type="text" formControlName="commutationPortion"

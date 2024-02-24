@@ -6,34 +6,44 @@ import * as XLSX from 'xlsx';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 export interface PeriodicElement {
-  position: number;
-  pfno: number;
+  position:number;
+  employeeID:number;
   name: string;
-  ppo: number;
-  retirementType: string;
-  retirementDate: string;
-  action: string;
+  designation:string;
+  officeCode:string;
+  ppoNo:String;
+  totalAmount:Number;
+  totalRecoveries:Number;
+  netPayable: Number;
+  action:string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    position: 1,
-    pfno: 46546,
-    name: 'dhiya',
-    ppo: 54954,
-    retirementType: 'SUPERANNUATION',
-    retirementDate: 'ppp',
-    action: 'update'
+    position:1,
+    employeeID:275,
+    name: 'Dhiya',
+    designation:'manager',
+    officeCode:'4545',
+    ppoNo:'455',
+    totalAmount:466,
+    totalRecoveries:4662,
+    netPayable: 566,
+    action:'update'
   },
   {
-    position: 2,
-    pfno: 46546,
-    name: 'dhiya',
-    ppo: 5495,
-    retirementType: 'SUPERANNUATION',
-    retirementDate: 'ppp',
-    action: 'update'
+    position:1,
+    employeeID:275,
+    name: 'Dhiya',
+    designation:'manager',
+    officeCode:'4545',
+    ppoNo:'455',
+    totalAmount:466,
+    totalRecoveries:4662,
+    netPayable: 566,
+    action:'update'
   }
+  
 ];
 
 @Component({
@@ -43,7 +53,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class WorkingsheetComponent {
   workingSheet= new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  displayedColumns: string[] = ['position', 'pfno', 'name', 'ppo', 'retirementType', 'retirementDate', 'action'];
+  displayedColumns: string[] = ['position', 'employeeID', 'name', 'designation', 'officeCode', 'ppoNo','totalAmount','totalRecoveries','netPayable', 'action'];
 
   @ViewChild('content', { static: false }) content!: ElementRef;
 

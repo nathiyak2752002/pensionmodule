@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { NavbarComponent } from '../pages/navbar/navbar.component';
-import { PersonaldetailsComponent } from '../all-component/personaldetails/personaldetails.component';
 import { MaterialModule } from '../shared/material.module';
 import { OngoingPersonnelDetailsComponent } from '../all-component/ongoing-personnel-details/ongoing-personnel-details.component';
 
@@ -22,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     NavbarComponent,
-    PersonaldetailsComponent,
+   
     OngoingPersonnelDetailsComponent,
     WorkingsheetComponent,
     WorkingsheetSettlementComponent,

@@ -51,7 +51,7 @@ settlement!:FormGroup;
 
   ngOnInit(): void {
     this.settlement=this.fb.group({
-    vrno:['',Validators.required],
+    age:['',Validators.required],
     date:['',Validators.required]
   });
 }
@@ -102,5 +102,20 @@ settlement!:FormGroup;
     const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
     XLSX.writeFile(workbook, fileName);
   }
+
+  calculateAge() {
+    const dob = (document.getElementById("date") as HTMLInputElement).value;
+    const dobDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - dobDate.getFullYear();
+    const monthDiff = today.getMonth() - dobDate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
+      age--;
+    }
+
+    (document.getElementById("age") as HTMLInputElement).value = age.toString();
+  }
+
   
 }

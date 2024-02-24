@@ -29,16 +29,16 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" opened="true"
                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
-        <mat-list-item  class="sidebartextcontent" >
+        <!-- <mat-list-item  class="sidebartextcontent" >
           <button routerLink="personaldetails" routerLinkActive="active" mat-button>
             <mat-icon> insert_chart</mat-icon>PENSIONER DATA
         </button>
-        </mat-list-item>
+        </mat-list-item> -->
       
        <mat-expansion-panel class="custom-expansion-panel">
           <mat-expansion-panel-header>
             <mat-panel-title   >
-              <mat-icon>add_box</mat-icon> WORKING SHEET
+              <mat-icon>add_box</mat-icon> PENSIONER DATA
             </mat-panel-title>
           </mat-expansion-panel-header>
         
@@ -69,7 +69,7 @@
             <mat-list-item>
               <button  routerLink="payment-monthlypension" routerLinkActive="active" mat-button>
                 <mat-icon>add_box</mat-icon>
-                MONTHLY PENSION
+                MONTHLYPENSION
               </button>
             </mat-list-item>
             <mat-list-item>
